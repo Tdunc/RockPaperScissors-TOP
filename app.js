@@ -109,12 +109,12 @@ function main() {
 
 
 main();
+
+// For play again button
 function refreshPage(){
   window.location.reload();
 } 
 
-let user1 = userScore;
-let user2 = computerScore;
 
 function decision(){
   if ( userScore == 5) {
@@ -135,3 +135,21 @@ function decision(){
   }
 }
 
+// SPUDINSKE REFACTOR 
+// function decision() {
+//   if (userScore === 5 || userScore === 5) {
+//   if (userScore == 5) {
+//   Winner.textContent = "YOU WON!!";
+//   Winner.style = "color: green";
+//   }
+//   if (computerScore == 5) {
+//   Winner.textContent = "YOU LOST!";
+//   Winner.style = "color: red";
+//   }
+//   result_p.appendChild(Winner);
+//   div_choices.style = "display: none";
+//   resetGame.textContent = "Play Again";
+//   resetGame.style = "display: block";
+//   }
+//   }
+  
