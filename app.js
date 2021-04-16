@@ -7,6 +7,10 @@ const result_p = document.querySelector(".result > p");
 const rock_div = document.getElementById("r");
 const paper_div = document.getElementById("p");
 const scissors_div = document.getElementById("s");
+const div_choices = document.querySelector('.choices');
+const Winner = document.createElement('h1');
+const resetGame = document.getElementById('reset');
+
 
 //Calculates random move
 function getcomputerChoice() {
@@ -29,6 +33,17 @@ function win(userChoice, computerChoice) {
   const smallUserWord = "user".fontsize(3).sup();
   const smallCompWord = "comp".fontsize(3).sup();
   result_p.innerHTML = `${convertWord(userChoice)}${smallUserWord} beats ${convertWord(computerChoice)}${smallCompWord}, you win!`;
+  decision();
+  // creates winner header, adds play again button
+  // if (userScore == 5) {
+  //   div_choices.style = "display: none";
+  //   Winner.textContent = 'YOU WON!!';
+  //   Winner.style = "color: green";
+  //   result_p.appendChild(Winner);
+  //   resetGame.textContent = "Play Again";
+  //   resetGame.style = "display: block";
+  // }
+
 }
 function lose(userChoice, computerChoice) {
   computerScore++;
@@ -37,6 +52,16 @@ function lose(userChoice, computerChoice) {
   const smallUserWord = "user".fontsize(3).sup();
   const smallCompWord = "comp".fontsize(3).sup();
   result_p.innerHTML = `${convertWord(userChoice)}${smallUserWord} loses to ${convertWord(computerChoice)}${smallCompWord}, you lost!`;
+  decision();
+  // creates winner header, adds play again button
+  // if (computerScore == 5) {
+  //   div_choices.style = "display: none";
+  //   Winner.textContent = 'YOU LOST!';
+  //   Winner.style = "color: red";
+  //   result_p.appendChild(Winner);
+  //   resetGame.textContent = "Play Again";
+  //   resetGame.style = "display: block";
+  // }
 }
 function draw(userChoice, computerChoice) {
   const smallUserWord = "user".fontsize(3).sup();
@@ -84,3 +109,29 @@ function main() {
 
 
 main();
+function refreshPage(){
+  window.location.reload();
+} 
+
+let user1 = userScore;
+let user2 = computerScore;
+
+function decision(){
+  if ( userScore == 5) {
+    div_choices.style = "display: none";
+    Winner.textContent = 'YOU WON!!';
+    Winner.style = "color: green";
+    result_p.appendChild(Winner);
+    resetGame.textContent = "Play Again";
+    resetGame.style = "display: block";
+    
+  } else if ( computerScore == 5){
+    div_choices.style = "display: none";
+    Winner.textContent = 'YOU LOST!';
+    Winner.style = "color: red";
+    result_p.appendChild(Winner);
+    resetGame.textContent = "Play Again";
+    resetGame.style = "display: block";
+  }
+}
+

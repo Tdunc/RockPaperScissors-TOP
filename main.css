@@ -90,6 +90,7 @@ header > h1 {
   font-size: 20px;
   font-weight: bold;
   margin-top: 20px;
+  
 }
 
 .green-glow {
@@ -105,4 +106,25 @@ header > h1 {
 .gray-glow {
   border: 4px solid #464647;
   box-shadow: 0 0 10px #25292b;
+}
+
+#reset{
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+  margin: auto;
+  padding: 20px;
+  margin-top: 40px;
+  background-color:darkorange;
+  color: white;
+  border: 1px solid white;
+  font-size: 20px;
+  font-family: Asap, sans-serif;
+  font-weight: bold;
+  display: none;
+}
+
+#reset:hover {
+  transform: scale(1.1);
+  background-color: rgb(241, 163, 74);
 }
